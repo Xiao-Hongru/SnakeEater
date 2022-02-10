@@ -1,0 +1,76 @@
+// 设置变量
+@bg-color: #b7d4a8;
+
+// 清除默认样式
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Courier"
+}
+
+// 游戏主窗口
+#main{
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border:10px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-flow:column;
+  align-items: center;
+  justify-content: space-around;
+
+  // 游戏舞台
+  #stage{
+    width: 304px;
+    height: 304px;
+    border: 2px solid black;
+    position: relative;
+
+    #snake{
+      &>div{
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        border: 1px solid @bg-color;
+        position: absolute;
+      }
+      :first-child{
+        background-color: rgb(61, 110, 28);
+
+      }
+    }
+
+    .food{
+      position: absolute;
+      top:40px;
+      width:10px;
+      height: 10px;
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border: 1px solid @bg-color;    
+      background-color: rgb(238, 49, 15);
+      border-radius: 50%
+
+    }
+  }
+// 记分牌
+  #score-panel{
+    width:300px;
+    display:flex;
+    justify-content: space-between;
+
+  }
+}
+
+#rules{
+  width:400px;
+  max-height:400px;
+  margin:100px auto;
+}
